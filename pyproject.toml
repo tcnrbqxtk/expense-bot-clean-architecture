@@ -1,0 +1,33 @@
+[project]
+name = "expense-bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram>=3,<4",
+    "environs>=14,<15",
+    "redis>=6,<7",
+    "asyncpg==0.30.0",
+    "pydantic>=2,<3",
+    "structlog==25.4.0",
+    "aiojobs>=1,<2",
+    "orjson>=3.10,<4",
+    "tenacity>=9,<10",
+    "pytz>=2025,<2026",
+    "aiohttp>=3,<4",
+    "arrow>=1,<2",
+    "dotenv>=0.9.9",
+    "babel>=2.17.0",
+    "logging-config>=1.0.4",
+    "colorlog>=6.10.1",
+    "uuid>=1.30",
+    "timedelta>=2020.12.3",
+    "datetime>=6.0",
+    "sqlalchemy>=2.0.46",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.13",
+]
