@@ -8,7 +8,6 @@ from config import BOT_TOKEN, ENV
 from handlers import all_handlers
 # from db.base import engine, Base
 
-
 if ENV == "PROD":
     from logger.logging_prod import setup_logging
 else:
@@ -26,7 +25,8 @@ logger = logging.getLogger(__name__)
 
 async def main() -> str | None:
     if not BOT_TOKEN:
-        return "Error: Bot token is not found in .env"
+        print("Error: Bot token is not found in .env")
+        return
     bot = Bot(BOT_TOKEN)
     dp = Dispatcher(storage=MemoryStorage())
 
