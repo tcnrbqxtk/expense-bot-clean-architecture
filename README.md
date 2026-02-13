@@ -72,7 +72,7 @@ git clone https://github.com/tcnrbqxtk/expense-bot.git
 cd expense-bot
 ```
 
- 2. Создать файл .env
+ 2. Сделать копию .env-файла
 
 ```bash
 BOT_TOKEN=your_telegram_bot_token
@@ -109,11 +109,11 @@ source .venv/bin/activate   # Linux / macOS
 uv sync
 ```
 
- 4. Сделать копию json-файла
+ 3. Сделать копию json-файла
 
 Для работы создайте копию expenses.json.example в директории data и назовите её expenses.json
 
- 5. Создать файл .env
+ 4. Сделать копию .env-файла
 
 ```bash
 BOT_TOKEN=your_telegram_bot_token
@@ -122,7 +122,7 @@ ADMIN_IDS=numeric_telegram_admin_ids,
 DATA_FILE=data/expenses.json
 ```
 
- 6. Запустить бота
+ 5. Запустить бота
 
 ```bash
 uv run python src/bot.py
