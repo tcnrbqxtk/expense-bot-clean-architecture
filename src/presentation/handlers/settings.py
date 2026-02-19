@@ -2,31 +2,25 @@ from aiogram import Router
 from aiogram.filters import Command, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
+from dishka.integrations.aiogram import FromDishka, inject
 
-from states.settings_state import SettingsMenu
-from storage.json_storage import change_settings, get_settings_info
+from application.interactors.user.change_currency import ChangeCurrencyInteractor
+from application.interactors.user.change_daily_limit import ChangeDailyLimitInteractor
+from application.interactors.user.get_user_settings import GetUserSettingsInfoInteractor
+from presentation.states.settings_state import SettingsMenu
 
 
 router = Router()
 
 
-def display_settings_info(user_id: int) -> str:
-    settings_info = get_settings_info(user_id)
-    return (
-        "<b>⚙️ Настройки бота:</b>\n\n"
-        "Здесь вы можете изменить настройки бота.\n\n"
-        "<i>Доступные настройки:</i>\n"
-        "<pre>"
-        "1) Валюта (текущая: " + (settings_info["currency"] if settings_info else "RUB") + ")\n"
-        "2) Дневной Лимит (текущий: " + (str(settings_info["daily_limit"]) if settings_info else "0") + ")\n"
-        "</pre>"
-        "/quit - Выйти из меню настроек"
-    )
-
-
 @router.message(Command("settings"), StateFilter(None))
-async def settings_handler(message: Message, state: FSMContext) -> None:
-    settings_text = display_settings_info(message.from_user.id if message.from_user else 0)
+@inject
+async def settings_handler(
+    message: Message,
+    state: FSMContext,
+    get_settings_info: FromDishka[GetUserSettingsInfoInteractor],
+) -> None:
+    settings_text = await get_settings_info(message.from_user.id if message.from_user else 0)
     await message.answer(settings_text, parse_mode="HTML")
     await state.set_state(SettingsMenu.choosing_action)
 
@@ -49,29 +43,41 @@ async def settings_choose(message: Message, state: FSMContext) -> None:
 
 
 @router.message(SettingsMenu.waiting_for_currency)
-async def currency_choose(message: Message, state: FSMContext) -> None:
+@inject
+async def currency_choose(
+    message: Message,
+    state: FSMContext,
+    change_currency: FromDishka[ChangeCurrencyInteractor],
+    display_settings_info: FromDishka[GetUserSettingsInfoInteractor],
+) -> None:
     if not message.from_user or message.text is None:
         return
     new_currency = message.text.strip().upper()
-    change_settings(message.from_user.id, new_currency)
+    await change_currency(message.from_user.id, new_currency)
     await message.answer(f"Валюта успешно изменена на {new_currency}!")
-    settings_text = display_settings_info(message.from_user.id if message.from_user else 0)
+    settings_text = await display_settings_info(message.from_user.id if message.from_user else 0)
     await message.answer(settings_text, parse_mode="HTML")
     await state.set_state(SettingsMenu.choosing_action)
 
 
 @router.message(SettingsMenu.waiting_for_limit)
-async def limit_choose(message: Message, state: FSMContext) -> None:
+@inject
+async def limit_choose(
+    message: Message,
+    state: FSMContext,
+    change_daily_limit: FromDishka[ChangeDailyLimitInteractor],
+    display_settings_info: FromDishka[GetUserSettingsInfoInteractor],
+) -> None:
     if not message.from_user or message.text is None:
         return
     try:
         new_limit = int(message.text.strip())
-        change_settings(message.from_user.id, daily_limit=new_limit)
+        await change_daily_limit(message.from_user.id, new_limit)
         await message.answer(f"Дневной лимит успешно изменён на {new_limit}!")
     except ValueError:
         await message.answer("Пожалуйста, введите корректное число для дневного лимита.")
         await state.set_state(SettingsMenu.waiting_for_limit)
         return
-    settings_text = display_settings_info(message.from_user.id if message.from_user else 0)
+    settings_text = await display_settings_info(message.from_user.id if message.from_user else 0)
     await message.answer(settings_text, parse_mode="HTML")
     await state.set_state(SettingsMenu.choosing_action)

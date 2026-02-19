@@ -1,10 +1,10 @@
-﻿from domain.entities.role import Role
+from domain.entities.role import Role
 from domain.entities.user import User
 from domain.repositories.user_repository import UserRepository
 
 
 class CreateUserInteractor:
-    def __init__(self, user_repo: UserRepository, admin_ids: list[str]):
+    def __init__(self, user_repo: UserRepository, admin_ids: list[str]) -> None:
         self.user_repo = user_repo
         self.admin_ids = admin_ids
 

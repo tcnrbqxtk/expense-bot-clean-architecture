@@ -1,7 +1,6 @@
 from aiogram import Router
 from aiogram.filters import Command, StateFilter
 from aiogram.types import Message
-
 from states.admin_state import AdminMenu
 
 

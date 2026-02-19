@@ -4,11 +4,9 @@ from aiogram.filters.command import CommandObject
 from aiogram.types import Message
 from dishka.integrations.aiogram import FromDishka, inject
 
-from application.interactors.user.get_user import GetUserInteractor
-from application.interactors.user.add_expense import AddExpenseInteractor
-from application.interactors.user.create_user import CreateUserInteractor
-
+from application.interactors.user.add_expense_for_user import GetOrCreateUserAndAddExpenseInteractor
 from exceptions import ExpensesCapError, JsonError
+
 
 router = Router()
 
@@ -16,11 +14,7 @@ router = Router()
 @router.message(Command("add"), StateFilter(None))
 @inject
 async def add_handler(
-    message: Message,
-    command: CommandObject,
-    add_expense: FromDishka[AddExpenseInteractor],
-    create_user: FromDishka[CreateUserInteractor],
-    get_user: FromDishka[GetUserInteractor]
+    message: Message, command: CommandObject, get_or_create_and_add: FromDishka[GetOrCreateUserAndAddExpenseInteractor]
 ) -> None:
 
     if not message.from_user:
@@ -49,16 +43,16 @@ async def add_handler(
     comment = parts[2] if len(parts) > 2 else ""
 
     try:
-        try:
-            user = await create_user(message.from_user.id)
-        except ValueError:
-            user = await get_user(message.from_user.id)
-        await add_expense(user, amount, category, comment) # type: ignore
+        await get_or_create_and_add(message.from_user.id, amount, category, comment)
     except ExpensesCapError:
-        await message.answer("Превышено максимальное количество трат в день!")
+        await message.answer("Ошибка: Превышен лимит расходов!")
         return
     except JsonError:
-        await message.answer("Ошибка в базе данных. Данные не переданы")
+        await message.answer("Ошибка при сохранении расхода.")
         return
-
+    except PermissionError:
+        await message.answer(
+            "Ошибка: У вас нет прав для добавления расходов. (скорее всего ошибка со стороны базы данных)"
+        )
+        return
     await message.answer(f"💸 Расход {amount} ₽ добавлен в категорию «{category}»")

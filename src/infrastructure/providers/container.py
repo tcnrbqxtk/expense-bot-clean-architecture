@@ -1,14 +1,12 @@
-﻿from dishka import make_async_container
-from infrastructure.providers.config_provider import ConfigProvider
-from infrastructure.providers.logger_provider import LoggerProvider
-from infrastructure.providers.main_provider import AiogramProvider
-from infrastructure.providers.repository_provider import RepositoryProvider
-from infrastructure.providers.interactor_provider import InteractorProvider
+from dishka import make_async_container
+
+from infrastructure.providers.config import ConfigProvider
+from infrastructure.providers.interactor import InteractorProvider
+from infrastructure.providers.logger import LoggerProvider
+from infrastructure.providers.main import AiogramProvider
+from infrastructure.providers.repostiory import RepositoryProvider
+
 
 container = make_async_container(
-    ConfigProvider(),
-    LoggerProvider(),
-    RepositoryProvider(),
-    InteractorProvider(),
-    AiogramProvider()
+    ConfigProvider(), LoggerProvider(), RepositoryProvider(), InteractorProvider(), AiogramProvider()
 )

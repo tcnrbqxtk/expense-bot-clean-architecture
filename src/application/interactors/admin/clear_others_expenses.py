@@ -14,4 +14,4 @@ class ClearOthersExpensesInteractor:
         role = user.role
         if not role.can_clear_others_expenses():
             raise PermissionError("User does not have permission to clear others' expenses")
-        self.expense_repo.clear_expenses(user_id)
+        self.expense_repo.clear(user_id)

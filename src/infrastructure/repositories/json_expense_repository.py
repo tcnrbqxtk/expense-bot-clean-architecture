@@ -1,7 +1,8 @@
-﻿from typing import Any
+from typing import Any
 
 from domain.entities.expense import Expense
 from domain.repositories.expense_repository import ExpenseRepository
+from exceptions import JsonError
 
 
 class JsonExpenseRepository(ExpenseRepository):
@@ -16,6 +17,8 @@ class JsonExpenseRepository(ExpenseRepository):
                 return json.load(f)
         except FileNotFoundError:
             return {}
+        except json.JSONDecodeError:
+            raise JsonError("Invalid JSON format in expenses file")
 
     def _save_expenses(self, data: dict[str, list[dict[str, str | float]]]) -> None:
         import json
@@ -23,19 +26,19 @@ class JsonExpenseRepository(ExpenseRepository):
         with open(self.path, "w") as f:
             json.dump(data, f, indent=4)
 
-    def add_expense(self, expense: Expense) -> None:
+    def add(self, expense: Expense) -> None:
         data = self._load_expenses()
         user_expenses = data.get(str(expense.user_id), [])
         user_expenses.append({"amount": expense.amount, "category": expense.category, "comment": expense.comment})
         data[str(expense.user_id)] = user_expenses
         self._save_expenses(data)
 
-    def get_expenses_by_user(self, user_id: int) -> list[Expense]:
+    def get_by_user(self, user_id: int) -> list[Expense]:
         data = self._load_expenses()
         user_expenses = data.get(str(user_id), [])
         return [Expense(user_id, e["amount"], e["category"], e["comment"]) for e in user_expenses]
 
-    def clear_expenses(self, user_id: int) -> None:
+    def clear(self, user_id: int) -> None:
         data = self._load_expenses()
         if str(user_id) in data:
             del data[str(user_id)]
@@ -45,7 +48,7 @@ class JsonExpenseRepository(ExpenseRepository):
         data = self._load_expenses()
         return sum(e["amount"] for expenses in data.values() for e in expenses)
 
-    def get_all_expenses(self) -> list[Expense]:
+    def get_all(self) -> list[Expense]:
         data = self._load_expenses()
         expenses: list[Expense] = []
         for user_id, user_expenses in data.items():

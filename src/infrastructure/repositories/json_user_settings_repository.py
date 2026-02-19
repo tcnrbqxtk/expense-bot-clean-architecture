@@ -6,7 +6,7 @@ class JsonUserSettingsRepository(UserSettingsRepository):
     def __init__(self, path: str):
         self.path = path
 
-    def get_settings_by_user(self, user_id: int) -> UserSettings:
+    def get(self, user_id: int) -> UserSettings:
         data = self._load()
         user_data = data.get(str(user_id), {})
         return UserSettings(
@@ -15,7 +15,7 @@ class JsonUserSettingsRepository(UserSettingsRepository):
             daily_limit=float(user_data.get("daily_limit", 0.0)),
         )
 
-    def save_settings(self, user_settings: UserSettings):
+    def save(self, user_settings: UserSettings):
         data = self._load()
         data[str(user_settings.user_id)] = {
             "currency": user_settings.currency,

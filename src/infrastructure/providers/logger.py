@@ -1,8 +1,11 @@
-from dishka import Provider, provide, Scope  # type: ignore
 import logging
+
+from dishka import Provider, Scope, provide  # type: ignore
+
 from infrastructure.config import Config
-from infrastructure.logger.logging_prod import setup_logging as setup_logging_prod
 from infrastructure.logger.logging_dev import setup_logging as setup_logging_dev
+from infrastructure.logger.logging_prod import setup_logging as setup_logging_prod
+
 
 class LoggerProvider(Provider):
     @provide(scope=Scope.APP)

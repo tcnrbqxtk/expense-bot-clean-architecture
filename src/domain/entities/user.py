@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+
 from domain.entities.role import Role
 from domain.entities.user_settings import UserSettings
 

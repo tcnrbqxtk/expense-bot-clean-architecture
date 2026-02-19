@@ -6,10 +6,10 @@ class Role:
     name: str
 
     # common permissions for both admin and user
-    def can_add_expense(self) -> bool:
+    def can_add(self) -> bool:
         return self.name in ["admin", "user"]
 
-    def can_clear_expenses(self) -> bool:
+    def can_clear(self) -> bool:
         return self.name in ["admin", "user"]
 
     def can_view_stats(self) -> bool:

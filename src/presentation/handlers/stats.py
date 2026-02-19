@@ -3,7 +3,6 @@ import logging
 from aiogram import Router, types
 from aiogram.filters import Command, StateFilter
 from aiogram.filters.command import CommandObject
-
 from storage.json_storage import user_get_by_period
 
 

@@ -1,11 +1,13 @@
-﻿import asyncio
+import asyncio
 import logging
-from aiogram import Bot, Dispatcher
 
-from presentation.handlers import all_handlers
-from infrastructure.providers.container import container
+from aiogram import Bot, Dispatcher
 from dishka.integrations.aiogram import setup_dishka
+
 from infrastructure.config import Config
+from infrastructure.providers.container import container
+from presentation.handlers import all_handlers
+
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +22,7 @@ async def main():
 
     bot: Bot = await container.get(Bot)
     dp: Dispatcher = await container.get(Dispatcher)
-    
+
     setup_dishka(container=container, router=dp)
 
     dp.include_routers(*all_handlers)

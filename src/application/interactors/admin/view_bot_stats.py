@@ -14,5 +14,5 @@ class ViewBotStatsInteractor:
         return {
             "total_sum_of_expenses": self.expense_repo.count_all_expenses(),
             "total_users": self.user_repo.count_users(),
-            "total_expenses_count": len(self.expense_repo.get_all_expenses()),
+            "total_expenses_count": len(self.expense_repo.get_all()),
         }
