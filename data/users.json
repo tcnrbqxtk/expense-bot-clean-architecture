@@ -1,0 +1,9 @@
+{
+  "123": {
+    "role": "admin",
+    "settings": {
+      "currency": "RUB",
+      "daily_limit": 0.0
+    }
+  }
+}

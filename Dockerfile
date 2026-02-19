@@ -7,4 +7,4 @@ COPY . .
 RUN pip install --no-cache-dir uv
 RUN uv sync
 
-CMD ["uv", "run", "src/bot.py"]
+CMD ["uv", "run", "src/main.py"]

@@ -1,6 +1,6 @@
 class ExpensesCapError(Exception):
     """
-    Превышено максимальное количество трат.
+    The user has reached the maximum number of expenses allowed.
     """
 
     pass
@@ -8,7 +8,7 @@ class ExpensesCapError(Exception):
 
 class JsonError(Exception):
     """
-    Битый json-файл.
+    Bad json-file.
     """
 
     pass

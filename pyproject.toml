@@ -9,7 +9,7 @@ dependencies = [
     "environs>=14,<15",
     "redis>=6,<7",
     "asyncpg==0.30.0",
-    "pydantic>=2,<3",
+    "pydantic[dotenv]>=2,<3",
     "structlog==25.4.0",
     "aiojobs>=1,<2",
     "orjson>=3.10,<4",
@@ -25,6 +25,8 @@ dependencies = [
     "timedelta>=2020.12.3",
     "datetime>=6.0",
     "sqlalchemy>=2.0.46",
+    "dishka>=1.8.0",
+    "pydantic-settings>=2.13.0",
 ]
 
 [dependency-groups]

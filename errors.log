@@ -1,0 +1,937 @@
+2026-02-14 23:16:41,923 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912355 by bot id=8322852253
+RuntimeError: asyncio.run() cannot be called from a running event loop
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 14, in add_handler
+    from app import add_expense, create_user, user_repo
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/app.py", line 55, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 200, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2026-02-14 23:24:54,842 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912356 by bot id=8322852253
+RuntimeError: asyncio.run() cannot be called from a running event loop
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 14, in add_handler
+    from app import add_expense, create_user, user_repo
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/app.py", line 54, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.14/asyncio/runners.py", line 200, in run
+    raise RuntimeError(
+        "asyncio.run() cannot be called from a running event loop")
+RuntimeError: asyncio.run() cannot be called from a running event loop
+2026-02-14 23:33:07,319 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912357 by bot id=8322852253
+ImportError: cannot import name 'add_expense' from 'app' (/home/tcnrbqxtk/proj/expense-bot-docker/src/app.py)
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 14, in add_handler
+    from app import add_expense, create_user, user_repo
+ImportError: cannot import name 'add_expense' from 'app' (/home/tcnrbqxtk/proj/expense-bot-docker/src/app.py)
+2026-02-14 23:34:50,579 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912358 by bot id=8322852253
+AttributeError: type object 'Container' has no attribute 'create_user'
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 43, in add_handler
+    Container.create_user(message.from_user.id)
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Container' has no attribute 'create_user'
+2026-02-14 23:39:09,209 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912359 by bot id=8322852253
+JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 49, in add_handler
+    user = await create_user(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/application/interactors/user/create_user.py", line 13, in __call__
+    if self.user_repo.exists(user_id):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/infrastructure/repositories/json_user_repository.py", line 43, in exists
+    data = self._load()
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/infrastructure/repositories/json_user_repository.py", line 17, in _load
+    return json.load(f)
+           ~~~~~~~~~^^^
+  File "/usr/lib64/python3.14/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/lib64/python3.14/json/__init__.py", line 341, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+                          s, 0)
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+2026-02-14 23:40:13,739 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912360 by bot id=8322852253
+AttributeError: 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 50, in add_handler
+    await add_expense(user, amount, category, comment)
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/application/interactors/user/add_expense.py", line 14, in __call__
+    self.expense_repo.add_expense(expense)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/infrastructure/repositories/json_expense_repository.py", line 28, in add_expense
+    user_expenses = data.get(str(expense.user_id), [])
+                    ^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2026-02-14 23:42:06,080 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912361 by bot id=8322852253
+ValueError: Пользователь уже существует
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 49, in add_handler
+    user = await create_user(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/application/interactors/user/create_user.py", line 14, in __call__
+    raise ValueError("Пользователь уже существует")
+ValueError: Пользователь уже существует
+2026-02-14 23:42:42,360 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912364 by bot id=8322852253
+ValueError: Пользователь уже существует
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/middlewares/di.py", line 24, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/presentation/handlers/add_handler.py", line 49, in add_handler
+    user = await create_user(message.from_user.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/src/application/interactors/user/create_user.py", line 14, in __call__
+    raise ValueError("Пользователь уже существует")
+ValueError: Пользователь уже существует
+2026-02-16 16:57:58,788 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2026-02-16 16:59:51,849 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2026-02-19 20:52:54,983 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:00,680 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:06,300 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:12,313 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:18,634 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:26,167 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:34,816 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:44,030 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:53:53,516 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:02,789 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:12,277 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:21,789 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:31,942 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:42,837 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:54:51,263 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:00,516 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:12,000 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:23,103 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:33,336 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:44,332 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:55:55,228 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:56:05,904 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:56:16,461 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:56:27,121 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:56:37,459 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:56:50,025 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912374 by bot id=8322852253
+TypeError: add_handler() missing 3 required positional arguments: 'add_expense', 'create_user', and 'get_user'
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+                 ~~~~~~~^^
+TypeError: add_handler() missing 3 required positional arguments: 'add_expense', 'create_user', and 'get_user'
+2026-02-19 20:56:51,718 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:01,455 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:11,273 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:21,714 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:32,292 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:43,697 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:57:53,033 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:03,396 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:14,110 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:25,115 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:35,965 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:45,954 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:58:56,341 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:06,858 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:17,415 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:27,415 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:37,792 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:47,956 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 20:59:58,251 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:00:08,662 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:00:19,027 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:00:29,621 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:00:40,410 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:00:50,687 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:01,165 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:11,704 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:21,883 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:32,088 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:42,403 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:01:52,756 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:02,616 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:13,109 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:23,578 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:34,000 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:44,434 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:02:54,997 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:03:05,449 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:03:15,663 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:03:25,059 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:03:36,011 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7ff256848ec0>
+2026-02-19 21:03:54,048 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:04:03,441 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:04:21,229 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:04:30,579 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:04:37,494 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fa452984ec0>
+2026-02-19 21:04:49,901 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:04:51,063 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912375 by bot id=8322852253
+NoFactoryError: Cannot find factory for (CreateUserInteractor, component='', scope=Scope.REQUEST). Check scopes in your providers. It is missing or has invalid scope.
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/base.py", line 169, in auto_injected_func
+    name: await container.get(
+          ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 163, in get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 173, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 175, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 175, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 189, in _get_unlocked
+    raise NoFactoryError(
+    ...<3 lines>...
+    )
+dishka.exceptions.NoFactoryError: Cannot find factory for (CreateUserInteractor, component='', scope=Scope.REQUEST). Check scopes in your providers. It is missing or has invalid scope.
+2026-02-19 21:04:55,348 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:07:59,002 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f2101b84ec0>
+2026-02-19 21:09:07,861 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:09:13,444 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:09:21,816 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:09:25,151 | ERROR | dispatcher.py:325 | aiogram.event | Cause exception while process update id=262912376 by bot id=8322852253
+NoFactoryError: Cannot find factory for (GetUserInteractor, component='', scope=Scope.REQUEST). Check scopes in your providers. It is missing or has invalid scope.
+Traceback (most recent call last):
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/aiogram.py", line 72, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/integrations/base.py", line 169, in auto_injected_func
+    name: await container.get(
+          ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 163, in get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 173, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 175, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 195, in _get_unlocked
+    return await self.parent_container._get(key)  # noqa: SLF001
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 175, in _get
+    return await self._get_unlocked(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tcnrbqxtk/proj/expense-bot-docker/.venv/lib64/python3.14/site-packages/dishka/async_container.py", line 189, in _get_unlocked
+    raise NoFactoryError(
+    ...<3 lines>...
+    )
+dishka.exceptions.NoFactoryError: Cannot find factory for (GetUserInteractor, component='', scope=Scope.REQUEST). Check scopes in your providers. It is missing or has invalid scope.
+2026-02-19 21:09:28,271 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:10:06,130 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f777f988ec0>
+2026-02-19 21:10:10,633 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f0764090ec0>
+2026-02-19 21:10:20,648 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:10:26,264 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:10:32,363 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:10:55,412 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f0dda280ec0>
+2026-02-19 21:11:07,052 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:11:19,210 | ERROR | base_events.py:1875 | asyncio | Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f6c1c180ec0>
+2026-02-19 21:11:36,693 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:11:42,716 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:11:49,477 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:11:57,287 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:12:03,482 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:12:11,059 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:12:20,417 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:12:30,576 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:13:45,813 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2026-02-19 21:13:59,479 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:14:11,135 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:14:23,672 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:14:38,881 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:15:00,774 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:18:35,156 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-02-19 21:18:47,606 | ERROR | dispatcher.py:225 | aiogram.dispatcher | Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running

@@ -3,8 +3,7 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from states.admin_state import AdminMenu
-from storage.json_storage import check_admin, clear_user, get_active_users, get_all_messages_count
+from presentation.states.admin_state import AdminMenu
 
 
 router = Router()
