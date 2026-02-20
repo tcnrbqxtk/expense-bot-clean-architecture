@@ -16,7 +16,6 @@ router = Router()
 async def add_handler(
     message: Message, command: CommandObject, get_or_create_and_add: FromDishka[GetOrCreateUserAndAddExpenseInteractor]
 ) -> None:
-
     if not message.from_user:
         return
 

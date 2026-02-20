@@ -4,10 +4,10 @@ from domain.entities.user_settings import UserSettings
 
 
 class UserSettingsRepository(Protocol):
-    def get(self, user_id: int) -> UserSettings:
+    async def get(self, user_id: int) -> UserSettings:
         """Get user settings"""
         return UserSettings(user_id)
 
-    def save(self, user_settings: UserSettings):
+    async def save(self, user_settings: UserSettings):
         """Save user settings"""
         ...

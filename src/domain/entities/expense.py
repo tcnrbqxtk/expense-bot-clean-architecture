@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import date
 
 
 @dataclass(frozen=True)
@@ -7,6 +8,7 @@ class Expense:
     amount: float
     category: str
     comment: str = ""
+    date: date = field(default_factory=date.today)
 
     def __post_init__(self):
         if self.amount < 0:

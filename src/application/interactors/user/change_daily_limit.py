@@ -6,6 +6,6 @@ class ChangeDailyLimitInteractor:
         self.repo = repo
 
     async def __call__(self, user_id: int, daily_limit: int) -> None:
-        settings = self.repo.get(user_id)
+        settings = await self.repo.get(user_id)
         settings.daily_limit = daily_limit
-        self.repo.save(settings)
+        await self.repo.save(settings)

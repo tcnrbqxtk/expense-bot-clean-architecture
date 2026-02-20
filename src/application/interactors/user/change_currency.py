@@ -6,6 +6,6 @@ class ChangeCurrencyInteractor:
         self.repo = repo
 
     async def __call__(self, user_id: int, currency: str) -> None:
-        settings = self.repo.get(user_id)
+        settings = await self.repo.get(user_id)
         settings.currency = currency
-        self.repo.save(settings)
+        await self.repo.save(settings)

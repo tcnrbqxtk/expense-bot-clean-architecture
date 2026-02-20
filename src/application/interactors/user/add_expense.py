@@ -13,6 +13,6 @@ class AddExpenseInteractor:
             raise PermissionError("User does not have permission to add expenses")
         expense = Expense(user.user_id, amount, category, comment)
         try:
-            self.expense_repo.add(expense)
+            await self.expense_repo.add(expense)
         except JsonError as e:
             raise JsonError(f"Failed to add expense: {e}")
